@@ -499,9 +499,9 @@ public class SystemBarTintManager {
          *
          * @return The layout inset (in pixels).
          */
-        public int getPixelInsetBottom() {
+        public int getPixelInsetBottom(boolean withActionBar) {
             if (mTranslucentNavBar && isNavigationAtBottom()) {
-                return mNavigationBarHeight;
+                return mNavigationBarHeight + (withActionBar ? mActionBarHeight : 0);
             } else {
                 return 0;
             }
